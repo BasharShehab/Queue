@@ -7,15 +7,16 @@ int *queue = new int[length];
 
 void incQueue(int *&queue) {
     int tempArr[length];
-    for (int i = 0; i <= front; i++) {
+    for (int i = 0; i <= back; i++) {
         tempArr[i] = queue[i];
     }
     length += 10;
+    delete queue;
     queue = new int[length];
     for (int i = 0; i < length; i++) {
         queue[i] = NULL;
     }
-    for (int i = 0; i <= front; i++) {
+    for (int i = 0; i <= back; i++) {
         queue[i] = tempArr[i];
     }
 }
